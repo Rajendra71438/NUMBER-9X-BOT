@@ -18,7 +18,8 @@ VIDEO_MSG_ID_1 = int(os.getenv("VIDEO_MSG_ID_1"))
 APK_MSG_ID = int(os.getenv("APK_MSG_ID"))
 VIDEO_MSG_ID_2 = int(os.getenv("VIDEO_MSG_ID_2"))
 VOICE_MSG_ID = int(os.getenv("VOICE_MSG_ID"))
-MSG_ID_2 = int(os.getenv("MSG_ID_2"))   # last msg
+MSG_ID_2 = int(os.getenv("MSG_ID_2"))   # second last msg
+EXTRA_MSG_ID = int(os.getenv("EXTRA_MSG_ID"))  # ✅ last msg
 
 
 async def send_full_message(user_id, context):
@@ -29,7 +30,8 @@ async def send_full_message(user_id, context):
         APK_MSG_ID,
         VIDEO_MSG_ID_2,
         VOICE_MSG_ID,
-        MSG_ID_2
+        MSG_ID_2,
+        EXTRA_MSG_ID   # ✅ now this is the FINAL message
     ]:
         await context.bot.copy_message(
             chat_id=user_id,
